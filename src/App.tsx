@@ -1,24 +1,20 @@
 import "boxicons/css/boxicons.min.css";
 import Input from "./components/general/Input";
-import Label from "./components/general/Label";
-import InputField from "./components/form/InputField";
 import Button from "./components/general/Button";
+import Dropdown from "./components/form/Dropdown";
 
 export default function App() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-slate-200">
-      <div className="flex flex-col items-start justify-center bg-white p-7 rounded w-full max-w-md">
+      <div className="flex flex-col items-start justify-center bg-white p-7 rounded w-full max-w-[560px]">
         <h1 className="font-extrabold text-[1.5rem]">Payment Request</h1>
-        <h1 className="mt-6 font-bold">Contact Details</h1>
-        <Input
-          type="email"
-          labelIcon="bx bxs"
+        <h1 className="mt-4 mb-2 font-bold">Contact Details</h1>
+        <Dropdown
           label="Send Payment Request to"
           data={["Option 1", "Option 2", "Option 3"]}
-          dropdown={true}
-          text="Email"
+          placeholder="Email"
         />
-        <div className="flex gap-2 mt-4">
+        <div className="grid grid-cols-2 gap-4 mt-3 w-full">
           <Input
             label="Name"
             type="Name"
@@ -32,53 +28,26 @@ export default function App() {
             text="email"
           />
         </div>
-        {/* <InputField
-          data={[
-            {
-              label: "Name",
-              type: "text",
-              placeholder: "Enter your Name",
-            },
-            {
-              label: "Email",
-              type: "email",
-              placeholder: "Enter your email",
-            },
-          ]}
-        /> */}
         <h1 className="mt-6 font-bold">Request Details</h1>
-        <InputField
-          className="pt-1"
-          data={[
-            {
-              label: "Amount",
-              type: "number",
-              placeholder: "0.00",
-              iconInput:
-                "bx bx-dollar text-slate-400 absolute left-0 top-1/2 transform -translate-y-1/2",
-            },
-            {
-              label: "Due Date",
-              type: "date",
-              text: "Enter your email",
-              description: "",
-            },
-          ]}
-        />
-        <Label className="mt-6" label="Company name to show on request" />
-        <Input
-          type="email"
-          icon="bx bx-chevron-left absolute right-2 top-1/2 transform -translate-y-1/2"
+        <div className="grid grid-cols-2 gap-4 mt-4 w-full">
+          <Input label="Amount" type="number" placeholder="0.00" />
+          <Input
+            label="Due Date"
+            type="date"
+            placeholder="Enter date"
+            text="date"
+          />
+        </div>
+        <Dropdown
+          className="mt-4"
+          label="Company name to show on request"
           data={["Option 1", "Option 2", "Option 3"]}
-          dropdown={true}
-          text="Email"
+          placeholder="Email"
         />
-        <Label className="mt-6" label="Destination Account" />
-        <Input
-          type="email"
-          icon="bx bx-chevron-left absolute right-2 top-1/2 transform -translate-y-1/2"
+        <Dropdown
+          className="mt-4"
+          label="Destination Account"
           data={["Option 1", "Option 2", "Option 3"]}
-          dropdown={true}
           text="Email"
         />
         <p className="text-[10px] text-slate-400 mb-2">
@@ -92,9 +61,9 @@ export default function App() {
             Payment link expires on December 11, 2023
           </p>
         </div>
-        <div className="flex items-center justify-between w-full">
-          <Button>Cancel</Button>
-          <Button className="bg-green-600 text-white hover:bg-green-800">
+        <div className="flex items-center justify-between w-full mt-4">
+          <Button className="px-4 py-2">Cancel</Button>
+          <Button className="bg-green-600 text-white hover:bg-green-800 px-4 py-2">
             Send Request
           </Button>
         </div>

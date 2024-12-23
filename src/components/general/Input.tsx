@@ -37,7 +37,7 @@ export default function Input({
         <input
           {...props}
           className={cn(
-            "border border-black rounded w-full pl-3 pr-10 py-1",
+            "border border-gray-300 rounded w-full px-4 py-2",
             value === text ? "text-gray-400" : "text-black"
           )}
           value={value}
