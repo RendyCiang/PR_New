@@ -10,18 +10,29 @@ export default function App() {
       <div className="flex flex-col items-start justify-center bg-white p-7 rounded w-full max-w-md">
         <h1 className="font-extrabold text-[1.5rem]">Payment Request</h1>
         <h1 className="mt-6 font-bold">Contact Details</h1>
-        <Label
-          label="Send Payment Request to"
-          icon="bx bx-reflect-horizontal"
-        />
         <Input
           type="email"
-          icon="bx bx-chevron-left absolute right-2 top-1/2 transform -translate-y-1/2"
+          labelIcon="bx bxs"
+          label="Send Payment Request to"
           data={["Option 1", "Option 2", "Option 3"]}
           dropdown={true}
           text="Email"
         />
-        <InputField
+        <div className="flex gap-2 mt-4">
+          <Input
+            label="Name"
+            type="Name"
+            placeholder="Enter your Name"
+            text="Text"
+          />
+          <Input
+            label="Email"
+            type="Email"
+            placeholder="Enter your email"
+            text="email"
+          />
+        </div>
+        {/* <InputField
           data={[
             {
               label: "Name",
@@ -34,7 +45,7 @@ export default function App() {
               placeholder: "Enter your email",
             },
           ]}
-        />
+        /> */}
         <h1 className="mt-6 font-bold">Request Details</h1>
         <InputField
           className="pt-1"
