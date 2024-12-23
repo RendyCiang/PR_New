@@ -24,3 +24,6 @@ export default function Label({
     </div>
   );
 }
+
+// Gada logic (useState, hooks, plain HTML)
+// Dibawah ~50 line
